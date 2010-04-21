@@ -2,7 +2,7 @@
 // @name           oAutoPagerize
 // @namespace      http://ss-o.net/
 // @description    loading next page and inserting into current page. oAutoPagerize supports for Opera 9.5+, GreaseKit(Safari/WebKit) and Google Chrome 3.0
-// @version        1.5.1
+// @version        1.0.0.0 (1.5.1)
 // @include        http://*
 // @include        https://*
 // @exclude        https://mail.google.com/*
@@ -68,7 +68,7 @@
 	var DebugMode = Set.DebugMode || false;
 	var URL = 'http://d.hatena.ne.jp/os0x/searchdiary?word=%2a%5boAutoPagerize%5d';
 	var UPDATE_URL = window.opera ? 'http://ss-o.net/userjs/0AutoPagerize.SITEINFO.js' : 'http://ss-o.net/userjs/0AutoPagerize.SITEINFO.user.js';
-	var VERSION = '1.5.0';
+	var VERSION = '1.0.0.0 (1.5.1)';
 	var AUTO_START = Set.AUTO_START !== false;
 	//var CACHE_EXPIRE = 24 * 60 * 60 * 1000;
 	var BASE_REMAIN_HEIGHT = Set.BASE_REMAIN_HEIGHT || 400;
@@ -133,7 +133,7 @@
 		,{
 			url:           'http://eow\\.alc\\.co\\.jp/[^/]+'
 			,nextLink:     'id("AutoPagerizeNextLink")'
-			,pageElement:  'id("resultList")//ul'
+			,pageElement:  'id("resultsList")//ul'
 			,exampleUrl:   'http://eow.alc.co.jp/%E3%81%82%E3%82%8C/UTF-8/ http://eow.alc.co.jp/are'
 		}
 	]);
@@ -209,7 +209,7 @@
 	}
 	if (location.host == 'eow.alc.co.jp') {
 		var alc = function(doc){
-			var a,r = doc.evaluate('//table[@class="pageNavi"]//td[last()]/a',doc,null,XPathResult.FIRST_ORDERED_NODE_TYPE,null);
+			var a,r = doc.evaluate('id("resultsArea")/div[@align="right"][last()]/p[@id="paging"]/a[last()]',doc,null,XPathResult.FIRST_ORDERED_NODE_TYPE,null);
 			if (r.singleNodeValue) a = r.singleNodeValue;
 			else return;
 			a.id = 'AutoPagerizeNextLink';
