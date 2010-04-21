@@ -3,12 +3,12 @@
 // @namespace      http://ss-o.net/
 // @description    oAutoPagerize SITEINFO
 // @include        http*
-// @checkurl       http://ss-o.net/userjs/0AutoPagerize.SITEINFO.user.js
+// @checkurl       http://ss-o.net/userjs/0AutoPagerize.SITEINFO.js
 // ==/UserScript==
 (function(){
 	if (this.chrome) {
 		window.addEventListener('ChromeAutoPagerizeInitialize',function(evt){
-			if (evt.setSiteinfo) evt.setSiteinfo(window.AutoPagerizeWedataSiteinfo);
+			evt.setSiteinfo(window.AutoPagerizeWedataSiteinfo);
 		}, false);
 	}
 
