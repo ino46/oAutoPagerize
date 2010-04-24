@@ -133,7 +133,7 @@
 		,{
 			url:           'http://eow\\.alc\\.co\\.jp/[^/]+'
 			,nextLink:     'id("AutoPagerizeNextLink")'
-			,pageElement:  'id("resultsList")//ul'
+			,pageElement:  'id("resultsList")/ul'
 			,exampleUrl:   'http://eow.alc.co.jp/%E3%81%82%E3%82%8C/UTF-8/ http://eow.alc.co.jp/are'
 		}
 	]);
